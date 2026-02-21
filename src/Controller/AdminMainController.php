@@ -3,7 +3,7 @@
 namespace MartenaSoft\AdminBundle\Controller;
 
 use MartenaSoft\AdminBundle\Services\CountsOnMainService;
-use MartenaSoft\SiteBundle\Dto\ActiveSiteDto;
+use MartenaSoft\CommonLibrary\Dto\ActiveSiteDto;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
