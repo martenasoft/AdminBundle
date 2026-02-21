@@ -1,0 +1,29 @@
+<li>
+    {% if item.title is defined and item.titleCreate is defined %}
+
+        <div class="row">
+            <div class="col-6">
+                {% if item.path is defined and item.path is not null %}
+                    <a class="dropdown-item" {{ item.attr is defined ? item.attr|raw}} href="{{ item.path }}"> {{ item.title | trans }} </a>
+                {% else %}
+                    <span class="dropdown-item" {{ item.attr is defined ? item.attr|raw}}> {{ item.title | trans }} </span>
+                {% endif %}
+            </div>
+            <div class="col-6 text-end">
+                {% if item.pathCreate is defined and item.pathCreate is not null %}
+                    <a class="dropdown-item" {{ item.attrCreate is defined ? item.attrCreate|raw}} href="{{ item.pathCreate }}">{{ item.titleCreate | trans }}</a>
+                {% else %}
+                    <span class="dropdown-item" {{ item.attrCreate is defined ? item.attrCreate|raw}}> {{ item.titleCreate | trans }} </span>
+                {% endif %}
+            </div>
+        </div>
+
+    {% else %}
+        {% if item.path is defined and item.path is not null %}
+            <a class="dropdown-item" {{ item.attr is defined ? item.attr|raw}} href="{{ item.path }}"> {{ item.title | trans }} </a>
+        {% else %}
+            <span class="dropdown-item" {{ item.attr is defined ? item.attr|raw}}> {{ item.title | trans }} </span>
+        {% endif %}
+
+    {% endif %}
+</li>

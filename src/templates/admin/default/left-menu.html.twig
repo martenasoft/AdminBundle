@@ -1,0 +1,18 @@
+{% set activeSite = app.request.attributes.get('active_site') %}
+
+<h4>Pages</h4>
+<ul class="list-group mb-4">
+    <li class="list-group-item"><a href="{{ path('app_page_items_admin') }}" class="list-group-item-action">Pages</a></li>
+</ul>
+
+<h4>Users</h4>
+
+<ul class="list-group">
+    <li class="list-group-item"><a href="{{ path('app_user_admin_index') }}" class="list-group-item-action">Users</a></li>
+    <li class="list-group-item"><a href="{{ path('app_role_admin_index') }}" class="list-group-item-action">Roles</a></li>
+    <li class="list-group-item"><a href="{{ path('app_permission_admin_index') }}" class="list-group-item-action">Permissions</a></li>
+</ul>
+
+
+
+

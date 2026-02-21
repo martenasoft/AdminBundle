@@ -1,0 +1,115 @@
+{% extends '@Admin/' ~ app.request.attributes.get('active_site').templatePath ~ '/base-empty.html.twig' %}
+{% block h1 %} {{ 'Admin' | trans }} {% endblock %}
+
+{% block breadcrumbs %}
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('app_page_main') }}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Admin</li>
+        </ol>
+    </nav>
+{% endblock %}
+
+{% block body %}
+
+    <hr>
+    <div class="row">
+        <div class="col-4 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="{{ path('app_page_items_admin') }}">{{ 'Pages' | trans }}</a> ({{ counts.pages }}) </h5>
+                    {% if counts.pages == 0 %}
+                        <div class="alert alert-warning">
+                            <strong>{{ 'You have no pages.' | trans }}
+                                <a href="{{ path('app_page_main_create') }}" class="card-link">{{ 'Create main page first' | trans }}</a>
+                            </strong>
+                        </div>
+                    {% endif %}
+                    <p class="card-text">Manage pages. Got to:</p>
+
+                    {% if counts.pages == 0 %}
+                        <a href="{{ path('app_page_main_create') }}" class="card-link">{{ 'Create main page' | trans }}</a>
+                    {% else %}
+                        <a href="{{ path('app_page_items_admin') }}" class="card-link">{{ 'Pages list' | trans }}</a>
+                    {% endif %}
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="{{ path('app_user_admin_index') }}">{{ 'Users' | trans }}</a> ({{ counts.users }})</h5>
+                    {% if counts.users == 0 %}
+                        <div class="alert alert-warning">
+                            <strong>{{ 'You have no users.' | trans }}
+                                <a href="{{ path('app_user_admin_new') }}" class="card-link">{{ 'Create user' | trans }}</a>
+                            </strong>
+                        </div>
+                    {% else %}
+
+                    {% endif %}
+
+                    <p class="card-text">{{ 'Manege users' | trans }}</p>
+                    <a href="{{ path('app_user_admin_new') }}" class="card-link">{{ 'Create user' | trans }}</a>
+                    {% if counts.users == 0 %}
+                    {% else %}
+                        <a href="{{ path('app_user_admin_index') }}" class="card-link">{{ 'Users list' | trans }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="{{ path('app_role_admin_index') }}">{{ 'Users roles' | trans }}</a> ({{ counts.roles }})</h5>
+                    {% if counts.roles == 0 %}
+                        <div class="alert alert-warning">
+                            <strong>{{ 'You have no roles.' | trans }}
+                                <a href="{{ path('app_role_admin_new') }}" class="card-link">{{ 'Create role' | trans }}</a>
+                            </strong>
+                        </div>
+                    {% else %}
+
+                    {% endif %}
+
+                    <p class="card-text">{{ 'Manege roles' | trans }}</p>
+                    <a href="{{ path('app_role_admin_new') }}" class="card-link">{{ 'Create role' | trans }}</a>
+                    {% if counts.roles == 0 %}
+                    {% else %}
+                        <a href="{{ path('app_role_admin_index') }}" class="card-link">{{ 'Roles list' | trans }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="{{ path('app_permission_admin_index') }}">{{ 'Users permissions' | trans }}</a> ({{ counts.roles }})</h5>
+                    {% if counts.roles == 0 %}
+                        <div class="alert alert-warning">
+                            <strong>{{ 'You have no permissions.' | trans }}
+                                <a href="{{ path('app_permission_admin_new') }}" class="card-link">{{ 'Create permission' | trans }}</a>
+                            </strong>
+                        </div>
+                    {% else %}
+
+                    {% endif %}
+
+                    <p class="card-text">{{ 'Manege permissions.' | trans }}</p>
+                    <a href="{{ path('app_permission_admin_new') }}" class="card-link">{{ 'Create permission' | trans }}</a>
+                    {% if counts.roles == 0 %}
+                    {% else %}
+                        <a href="{{ path('app_permission_admin_index') }}" class="card-link">{{ 'Permissions list' | trans }}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+

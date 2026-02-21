@@ -1,0 +1,9 @@
+{% set activeSite = app.request.attributes.get('active_site') %}
+<footer class="py-3 mt-auto">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+
+       <li class="nav-item">{{ 'Admin' | trans }}</li>
+
+    </ul>
+    <p class="text-center text-body-secondary">© {{ "now"|date("Y") }} MartenaSoft</p>
+</footer>
