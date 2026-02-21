@@ -1,0 +1,12 @@
+<div class="alert alert-warning">
+    {% if message is defined %}
+        {{ message | trans }}
+    {% else %}
+        No record found
+    {% endif %}
+
+    {% if createRecordRoute is defined and createRecordText is not null and createRecordText is defined and createRecordText is not null %}
+        <a href="{{ createRecordRoute }}">{{ createRecordText | trans}}</a>
+    {% endif %}
+
+</div>

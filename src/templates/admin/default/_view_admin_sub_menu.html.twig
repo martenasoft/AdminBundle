@@ -1,0 +1,25 @@
+<div class="dropdown text-end">
+    {% if createButtonTitle is defined and createButtonPath is defined and createButtonPath is not null  %}
+        <a class="btn btn-outline-primary" {{ createButtonTitle.attr is defined ? createButtonTitle.attr}} href="{{ createButtonPath }}">{{ createButtonTitle | trans }}</a>
+    {% endif %}
+    {% if items is defined %}
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+            {{ 'Actions' | trans }} ...
+        </button>
+        <ul class="dropdown-menu">
+            {% for item in items %}
+                {% if noDivider is not defined and loop.index > 1 %}
+                    <li><hr class="dropdown-divider"></li>
+                {% endif %}
+            {% include '@Admin/' ~ app.request.attributes.get('active_site').templatePath ~ '/_view_admin_sub_menu_item.html.twig' with {item: item} %}
+                {% if item.subItems is defined %}
+                    {% for subItem in item.subItems %}
+                        {% include '@Admin/' ~ app.request.attributes.get('active_site').templatePath ~ '/_view_admin_sub_menu_item.html.twig' with {item: subItem} %}
+
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
