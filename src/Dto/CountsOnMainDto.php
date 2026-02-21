@@ -5,10 +5,10 @@ namespace MartenaSoft\AdminBundle\Dto;
 class CountsOnMainDto
 {
     public function __construct(
-        private int $pages,
-        private int $users,
-        private int $roles,
-        private int $permissions,
+        private int $pages = 0,
+        private int $users = 0,
+        private int $roles = 0,
+        private int $permissions = 0,
     ) {
     }
 
