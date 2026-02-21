@@ -3,33 +3,31 @@
 namespace MartenaSoft\AdminBundle\Services;
 
 use MartenaSoft\AdminBundle\Dto\CountsOnMainDto;
-//use MartenaSoft\PageBundle\Repository\PageRepository;
 use MartenaSoft\CommonLibrary\Dto\ActiveSiteDto;
-//use MartenaSoft\UserBundle\Repository\PermissionRepository;
-//use MartenaSoft\UserBundle\Repository\RoleRepository;
-//use MartenaSoft\UserBundle\Repository\UserRepository;
+use MartenaSoft\SdkBundle\Service\Interfaces\PageSdkInterface;
+use MartenaSoft\SdkBundle\Service\Interfaces\RoleSdkInterface;
+use MartenaSoft\SdkBundle\Service\Interfaces\UserSdkInterface;
+
 
 class CountsOnMainService
 {
     public function __construct(
-//        private readonly PageRepository $pageRepository,
-//        private readonly UserRepository $userRepository,
-//        private readonly RoleRepository $roleRepository,
-//        private readonly PermissionRepository $permissionRepository,
+        private PageSdkInterface $pageSdk,
+        private UserSdkInterface $userSdk,
+        private RoleSdkInterface $roleSdk,
     ) {
     }
 
     public function get(ActiveSiteDto $activeSiteDto, string $lang): CountsOnMainDto
     {
-        $criteria = ['siteId' => $activeSiteDto->id];
-        $criteriaWithLang = [
-            'siteId' => $activeSiteDto->id,
-            'lang' => $lang,
+        $filter = [
+            'siteId' => $activeSiteDto->id
         ];
+
         return new CountsOnMainDto(
-//            pages: $this->pageRepository->count($criteriaWithLang),
-//            users: $this->userRepository->count($criteria),
-//            roles: $this->roleRepository->count($criteria),
+            pages: $this->pageSdk->getCount(array_merge($filter, ['lang' => $lang])),
+            users: $this->userSdk->getCount($filter),
+            roles: $this->roleSdk->getCount($filter),
 //            permissions: $this->permissionRepository->count($criteria),
         );
     }

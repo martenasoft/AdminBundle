@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ae157b7594a9eab7eb2d5e9a2a59bff",
+    "content-hash": "fbd074835c712bde7ae23d67f0bfdd0e",
     "packages": [
         {
             "name": "martenasoft/common_library",
@@ -42,6 +42,49 @@
                 "source": "https://github.com/martenasoft/CommonLibrary/tree/v1.1.4"
             },
             "time": "2026-02-21T18:11:59+00:00"
+        },
+        {
+            "name": "martenasoft/sdk_bundle",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/martenasoft/SdkBundle.git",
+                "reference": "8857e8659e5d632d95132348818ee5cdab38172f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/martenasoft/SdkBundle/zipball/8857e8659e5d632d95132348818ee5cdab38172f",
+                "reference": "8857e8659e5d632d95132348818ee5cdab38172f",
+                "shasum": ""
+            },
+            "require": {
+                "martenasoft/common_library": "^1.1",
+                "symfony/config": "^8.0",
+                "symfony/dependency-injection": "^8.0",
+                "symfony/http-kernel": "8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MartenaSoft\\SdkBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "MartenaSoft",
+                    "email": "martena.soft@gmail.com"
+                }
+            ],
+            "description": "MartenaSoft Sdk Bundle",
+            "support": {
+                "issues": "https://github.com/martenasoft/SdkBundle/issues",
+                "source": "https://github.com/martenasoft/SdkBundle/tree/v1.0.1"
+            },
+            "time": "2026-02-21T13:40:03+00:00"
         },
         {
             "name": "psr/cache",
@@ -1249,16 +1292,16 @@
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v8.0.5",
+            "version": "v8.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "20c1c5e41fc53928dbb670088f544f2d460d497d"
+                "reference": "33a41d7f17dfb65519670e7f9c2813896ae2a2aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/20c1c5e41fc53928dbb670088f544f2d460d497d",
-                "reference": "20c1c5e41fc53928dbb670088f544f2d460d497d",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/33a41d7f17dfb65519670e7f9c2813896ae2a2aa",
+                "reference": "33a41d7f17dfb65519670e7f9c2813896ae2a2aa",
                 "shasum": ""
             },
             "require": {
@@ -1329,7 +1372,7 @@
             "description": "Provides a structured process for converting a Request into a Response",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-kernel/tree/v8.0.5"
+                "source": "https://github.com/symfony/http-kernel/tree/v8.0.0"
             },
             "funding": [
                 {
@@ -1349,7 +1392,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-28T10:46:31+00:00"
+            "time": "2025-11-27T08:33:14+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
