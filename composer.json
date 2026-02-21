@@ -1,0 +1,19 @@
+{
+    "name": "martenasoft/admin_bundle",
+    "description": "MartenaSoft AdminBundle",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MartenaSoft\\AdminBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MartenaSoft",
+            "email": "martena.soft@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
