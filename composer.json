@@ -25,6 +25,6 @@
         "symfony/http-kernel": "^8.0",
         "symfony/yaml": "^8.0",
         "martenasoft/common_library": "^1.1",
-        "martenasoft/sdk_bundle": "^1.0"
+        "martenasoft/sdk_bundle": "^2.0"
     }
 }
