@@ -14,7 +14,7 @@
 
             </ul>
             {% include '@Admin/' ~ app.request.attributes.get('active_site').templatePath ~ '/language-top.html.twig' %}
-            {% include '@Admin/' ~ app.request.attributes.get('active_site').templatePath ~ '/user-nav.html.twig' %}
+            {% include '@Site/' ~ app.request.attributes.get('active_site').templatePath ~ '/user-nav.html.twig' %}
         </div>
     </div>
 </nav>

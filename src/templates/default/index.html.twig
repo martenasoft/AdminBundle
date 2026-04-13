@@ -17,23 +17,28 @@
         <div class="col-4 mt-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><a href="{{ path('app_page_items_admin') }}">{{ 'Pages' | trans }}</a> ({{ counts.pages }}) </h5>
-                    {% if counts.pages == 0 %}
-                        <div class="alert alert-warning">
-                            <strong>{{ 'You have no pages.' | trans }}
-                                <a href="{{ path('app_page_main_create') }}" class="card-link">{{ 'Create main page first' | trans }}</a>
-                            </strong>
+                    <div class="alert alert-warning">
+                        <h5 class="card-title">{{ 'Pages' | trans }}</h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <p><a href="{{ path('app_main_page_items_admin') }}">{{ 'Main' | trans }} {{ 'Pages' | trans }}</a> ({{ counts.pagesOnMain }}) </p>
                         </div>
-                    {% endif %}
-                    <p class="card-text">Manage pages. Got to:</p>
+                        <div class="col-8 text-end">
+                            <p><a href="{{ path('app_page_section_items_admin') }}">{{ 'Pages and sections' | trans }}</a> ({{ counts.pageSections }}/{{ counts.pages }}) </p>
+                        </div>
+                    </div>
+                    <hr>
 
-                    {% if counts.pages == 0 %}
-                        <a href="{{ path('app_page_main_create') }}" class="card-link">{{ 'Create main page' | trans }}</a>
-                    {% else %}
-                        <a href="{{ path('app_page_items_admin') }}" class="card-link">{{ 'Pages list' | trans }}</a>
-                    {% endif %}
-
-
+                    <div class="row">
+                        <div class="col-8">
+                            <p><a href="{{ path('app_page_items_admin') }}">{{ 'Basket' | trans }}</a> ({{ counts.pagesInBasket }}) </p>
+                        </div>
+                        <div class="col-4 text-end">
+                            <p><a href="#">{{ 'Clear' | trans }}</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,7 +46,7 @@
         <div class="col-4 mt-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><a href="{{ path('app_user_admin_index') }}">{{ 'Users' | trans }}</a> ({{ counts.users }})</h5>
+                    <h5 class="card-title"><a href="{{ path('app_user_admin_index') }}">{{ 'Users' | trans }}</a> ({{ counts.users }}/{{ counts.usersInBasket }})</h5>
                     {% if counts.users == 0 %}
                         <div class="alert alert-warning">
                             <strong>{{ 'You have no users.' | trans }}
@@ -65,7 +70,7 @@
         <div class="col-4 mt-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><a href="{{ path('app_role_admin_index') }}">{{ 'Users roles' | trans }}</a> ({{ counts.roles }})</h5>
+                    <h5 class="card-title"><a href="{{ path('app_role_admin_index') }}">{{ 'Users roles' | trans }}</a> ({{ counts.roles }}/{{ counts.rolseInBasket }})</h5>
                     {% if counts.roles == 0 %}
                         <div class="alert alert-warning">
                             <strong>{{ 'You have no roles.' | trans }}
@@ -89,7 +94,7 @@
         <div class="col-4 mt-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><a href="{{ path('app_permission_admin_index') }}">{{ 'Users permissions' | trans }}</a> ({{ counts.roles }})</h5>
+                    <h5 class="card-title"><a href="{{ path('app_permission_admin_index') }}">{{ 'Users permissions' | trans }}</a> ({{ counts.permissions }}/{{ counts.permissionsInBasket }})</h5>
                     {% if counts.roles == 0 %}
                         <div class="alert alert-warning">
                             <strong>{{ 'You have no permissions.' | trans }}

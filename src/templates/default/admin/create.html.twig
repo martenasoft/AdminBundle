@@ -1,0 +1,20 @@
+{% extends '@Admin/' ~ app.request.attributes.get('active_site').templatePath ~ '/base.html.twig' %}
+
+
+{% block title %} {{ 'New record' | trans }} {% endblock %}
+{% block h1 %}{{ 'New record' | trans }} {% endblock %}
+{% block breadcrumbs %}
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+
+            <li class="breadcrumb-item"><a href="{{ path('app_page_main') }}">{{ 'Home' | trans }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('admin_main') }}">{{ 'Admin' | trans }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ 'New record' | trans }} </li>
+        </ol>
+    </nav>
+{% endblock %}
+
+
+{% block body %}
+    {% include '@Admin/' ~ app.request.attributes.get('active_site').templatePath ~ '/admin/_form.html.twig' %}
+{% endblock %}

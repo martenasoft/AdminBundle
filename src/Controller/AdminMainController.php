@@ -11,13 +11,12 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class AdminMainController extends AbstractController
 {
+
     #[Route(
-        '/{_locale}/admin',
+        '/admin/{_locale}',
         name: 'admin_main',
         requirements: ['_locale' => '[a-z]{2}'],
-        defaults: ['_locale' => 'en'],
-        methods: ['GET'],
-        priority: 50)
+        methods: ['GET'])
     ]
     public function index(
         Request $request,
