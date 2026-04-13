@@ -1,0 +1,25 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+    {{ form_start(form) }}
+<div class="pt-3">
+    {{ form_widget(form) }}
+
+    <div class="form-check mt-3">
+        <input class="form-check-input" name="returnToNewFormAfterSave" type="checkbox" value="1"
+               id="returnToNewFormAfterSave">
+        <label class="form-check-label" for="returnToNewFormAfterSave">
+            Save and return to this form
+        </label>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6">
+            <button onclick="history.back()" class="btn btn-secondary">
+                {{ 'Cancel' | trans }}
+            </button>
+        </div>
+        <div class="col-6 text-end">
+            <button class="btn btn-primary" type="submit">{{ 'Save' | trans }}</button>
+        </div>
+    </div>
+</div>
+{{ form_end(form) }}
